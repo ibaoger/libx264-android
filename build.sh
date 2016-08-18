@@ -133,7 +133,7 @@ make STRIP= -j8 install || exit 1
 ### x86_64 ###
 SYSROOT=$TOOLCHAINS/x86_64/sysroot
 CROSS_PREFIX=$TOOLCHAINS/x86_64/bin/x86_64-linux-android-
-EXTRA_CFLAGS="-march=core-avx-i -mtune=core-avx-i -mx32 -mmmx -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -D__ANDROID__ -D__x86_64__"
+EXTRA_CFLAGS="-march=core-avx-i -mtune=core-avx-i -m64 -mmmx -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -D__ANDROID__ -D__x86_64__"
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/x86_64
 
@@ -162,7 +162,7 @@ make STRIP= -j8 install || exit 1
 ### mips ###
 SYSROOT=$TOOLCHAINS/mips/sysroot
 CROSS_PREFIX=$TOOLCHAINS/mips/bin/mipsel-linux-android-
-EXTRA_CFLAGS="-march=mips32 -mfp32 -msoft-float -D__ANDROID__ -D__mips__"
+EXTRA_CFLAGS="-march=mips32 -mfp32 -mhard-float -D__ANDROID__ -D__mips__"
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/mips
 
