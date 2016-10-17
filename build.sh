@@ -29,6 +29,7 @@ PREFIX=`pwd`/../libs/armeabi-v7a
         --extra-ldflags="$EXTRA_LDFLAGS" \
         --enable-pic \
         --enable-static \
+        --enable-shared \
         --enable-strip \
         --disable-cli \
         --disable-win32thread \
@@ -58,6 +59,7 @@ PREFIX=`pwd`/../libs/armeabi
         --extra-ldflags="$EXTRA_LDFLAGS" \
         --enable-pic \
         --enable-static \
+        --enable-shared \
         --enable-strip \
         --disable-cli \
         --disable-win32thread \
@@ -80,7 +82,7 @@ EXTRA_CFLAGS="-march=armv8-a -D__ANDROID__ -D__ARM_ARCH_8__ -D__ARM_ARCH_8A__"
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/arm64-v8a
 
-#./configure --prefix=$PREFIX \
+# ./configure --prefix=$PREFIX \
 #        --host=aarch64-linux-android \
 #        --sysroot=$SYSROOT \
 #        --cross-prefix=$CROSS_PREFIX \
@@ -88,6 +90,7 @@ PREFIX=`pwd`/../libs/arm64-v8a
 #        --extra-ldflags="$EXTRA_LDFLAGS" \
 #        --enable-pic \
 #        --enable-static \
+#        --enable-shared \
 #        --enable-strip \
 #        --disable-cli \
 #        --disable-win32thread \
@@ -97,9 +100,9 @@ PREFIX=`pwd`/../libs/arm64-v8a
 #        --disable-ffms \
 #        --disable-gpac \
 #        --disable-lsmash
-
-#make clean
-#make STRIP= -j8 install || exit 1
+#
+# make clean
+# make STRIP= -j8 install || exit 1
 
 
 ### x86 ###
@@ -117,6 +120,7 @@ PREFIX=`pwd`/../libs/x86
         --extra-ldflags="$EXTRA_LDFLAGS" \
         --enable-pic \
         --enable-static \
+        --enable-shared \
         --enable-strip \
         --disable-cli \
         --disable-win32thread \
@@ -138,7 +142,7 @@ EXTRA_CFLAGS="-march=core-avx-i -mtune=core-avx-i -m64 -mmmx -msse2 -msse3 -msss
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/x86_64
 
-#./configure --prefix=$PREFIX \
+# ./configure --prefix=$PREFIX \
 #        --host=x86_64-linux-android \
 #        --sysroot=$SYSROOT \
 #        --cross-prefix=$CROSS_PREFIX \
@@ -146,6 +150,7 @@ PREFIX=`pwd`/../libs/x86_64
 #        --extra-ldflags="$EXTRA_LDFLAGS" \
 #        --enable-pic \
 #        --enable-static \
+#        --enable-shared \
 #        --enable-strip \
 #        --disable-cli \
 #        --disable-win32thread \
@@ -155,9 +160,9 @@ PREFIX=`pwd`/../libs/x86_64
 #        --disable-ffms \
 #        --disable-gpac \
 #        --disable-lsmash
-
-#make clean
-#make STRIP= -j8 install || exit 1
+#
+# make clean
+# make STRIP= -j8 install || exit 1
 
 
 ### mips ###
@@ -175,6 +180,7 @@ PREFIX=`pwd`/../libs/mips
         --extra-ldflags="$EXTRA_LDFLAGS" \
         --enable-pic \
         --enable-static \
+        --enable-shared \
         --enable-strip \
         --disable-cli \
         --disable-win32thread \
@@ -197,7 +203,7 @@ EXTRA_CFLAGS="-march=mips64r6 -D__ANDROID__ -D__mips__"
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/mips64
 
-#./configure --prefix=$PREFIX \
+# ./configure --prefix=$PREFIX \
 #        --host=mips64el-linux-android \
 #       --sysroot=$SYSROOT \
 #       --cross-prefix=$CROSS_PREFIX \
@@ -205,6 +211,7 @@ PREFIX=`pwd`/../libs/mips64
 #        --extra-ldflags="$EXTRA_LDFLAGS" \
 #        --enable-pic \
 #        --enable-static \
+#        --enable-shared \
 #        --enable-strip \
 #        --disable-cli \
 #        --disable-win32thread \
@@ -215,6 +222,6 @@ PREFIX=`pwd`/../libs/mips64
 #        --disable-gpac \
 #        --disable-lsmash \
 #        --disable-asm
-
-#make clean
-#make STRIP= -j8 install || exit 1
+#
+# make clean
+# make STRIP= -j8 install || exit 1
