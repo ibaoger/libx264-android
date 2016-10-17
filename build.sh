@@ -3,10 +3,10 @@
 #############################################################
 #
 # 注：
-#    此处默认使用 $ANDROID_NDK/platforms/android-16 版本，此
+#    此处默认使用 $ANDROID_NDK/platforms/android-21 版本，此
 #    版本只支持32位toolchain。
 #    如果项目中有使用到 ndk-build 工具，请在 Application.mk 中
-#    添加 APP_PLATFORM := android-16
+#    添加 APP_PLATFORM := android-21
 #
 #############################################################
 
@@ -82,27 +82,27 @@ EXTRA_CFLAGS="-march=armv8-a -D__ANDROID__ -D__ARM_ARCH_8__ -D__ARM_ARCH_8A__"
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/arm64-v8a
 
-# ./configure --prefix=$PREFIX \
-#        --host=aarch64-linux-android \
-#        --sysroot=$SYSROOT \
-#        --cross-prefix=$CROSS_PREFIX \
-#        --extra-cflags="$EXTRA_CFLAGS" \
-#        --extra-ldflags="$EXTRA_LDFLAGS" \
-#        --enable-pic \
-#        --enable-static \
-#        --enable-shared \
-#        --enable-strip \
-#        --disable-cli \
-#        --disable-win32thread \
-#        --disable-avs \
-#        --disable-swscale \
-#        --disable-lavf \
-#        --disable-ffms \
-#        --disable-gpac \
-#        --disable-lsmash
-#
-# make clean
-# make STRIP= -j8 install || exit 1
+./configure --prefix=$PREFIX \
+       --host=aarch64-linux-android \
+       --sysroot=$SYSROOT \
+       --cross-prefix=$CROSS_PREFIX \
+       --extra-cflags="$EXTRA_CFLAGS" \
+       --extra-ldflags="$EXTRA_LDFLAGS" \
+       --enable-pic \
+       --enable-static \
+       --enable-shared \
+       --enable-strip \
+       --disable-cli \
+       --disable-win32thread \
+       --disable-avs \
+       --disable-swscale \
+       --disable-lavf \
+       --disable-ffms \
+       --disable-gpac \
+       --disable-lsmash
+
+make clean
+make STRIP= -j8 install || exit 1
 
 
 ### x86 ###
@@ -142,27 +142,27 @@ EXTRA_CFLAGS="-march=core-avx-i -mtune=core-avx-i -m64 -mmmx -msse2 -msse3 -msss
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/x86_64
 
-# ./configure --prefix=$PREFIX \
-#        --host=x86_64-linux-android \
-#        --sysroot=$SYSROOT \
-#        --cross-prefix=$CROSS_PREFIX \
-#        --extra-cflags="$EXTRA_CFLAGS" \
-#        --extra-ldflags="$EXTRA_LDFLAGS" \
-#        --enable-pic \
-#        --enable-static \
-#        --enable-shared \
-#        --enable-strip \
-#        --disable-cli \
-#        --disable-win32thread \
-#        --disable-avs \
-#        --disable-swscale \
-#        --disable-lavf \
-#        --disable-ffms \
-#        --disable-gpac \
-#        --disable-lsmash
-#
-# make clean
-# make STRIP= -j8 install || exit 1
+./configure --prefix=$PREFIX \
+       --host=x86_64-linux-android \
+       --sysroot=$SYSROOT \
+       --cross-prefix=$CROSS_PREFIX \
+       --extra-cflags="$EXTRA_CFLAGS" \
+       --extra-ldflags="$EXTRA_LDFLAGS" \
+       --enable-pic \
+       --enable-static \
+       --enable-shared \
+       --enable-strip \
+       --disable-cli \
+       --disable-win32thread \
+       --disable-avs \
+       --disable-swscale \
+       --disable-lavf \
+       --disable-ffms \
+       --disable-gpac \
+       --disable-lsmash
+
+make clean
+make STRIP= -j8 install || exit 1
 
 
 ### mips ###
@@ -203,25 +203,25 @@ EXTRA_CFLAGS="-march=mips64r6 -D__ANDROID__ -D__mips__"
 EXTRA_LDFLAGS="-nostdlib"
 PREFIX=`pwd`/../libs/mips64
 
-# ./configure --prefix=$PREFIX \
-#        --host=mips64el-linux-android \
-#       --sysroot=$SYSROOT \
-#       --cross-prefix=$CROSS_PREFIX \
-#        --extra-cflags="$EXTRA_CFLAGS" \
-#        --extra-ldflags="$EXTRA_LDFLAGS" \
-#        --enable-pic \
-#        --enable-static \
-#        --enable-shared \
-#        --enable-strip \
-#        --disable-cli \
-#        --disable-win32thread \
-#        --disable-avs \
-#        --disable-swscale \
-#        --disable-lavf \
-#        --disable-ffms \
-#        --disable-gpac \
-#        --disable-lsmash \
-#        --disable-asm
-#
-# make clean
-# make STRIP= -j8 install || exit 1
+./configure --prefix=$PREFIX \
+       --host=mips64el-linux-android \
+      --sysroot=$SYSROOT \
+      --cross-prefix=$CROSS_PREFIX \
+       --extra-cflags="$EXTRA_CFLAGS" \
+       --extra-ldflags="$EXTRA_LDFLAGS" \
+       --enable-pic \
+       --enable-static \
+       --enable-shared \
+       --enable-strip \
+       --disable-cli \
+       --disable-win32thread \
+       --disable-avs \
+       --disable-swscale \
+       --disable-lavf \
+       --disable-ffms \
+       --disable-gpac \
+       --disable-lsmash \
+       --disable-asm
+
+make clean
+make STRIP= -j8 install || exit 1
